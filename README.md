@@ -1,5 +1,6 @@
 # Node.js exercise
 - First of all run `$ npm install` to get all dependecies
+This app will do the basic `CRUD` operations over a SQL tables.
 
 ## Client side
 Start an AngularJS app with the folowing files:
