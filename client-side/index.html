@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html  ng-app="crud-app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="crud-app">
+        <nav class ="btn-group btn-group-lg">
+                <a class ="btn" href="#!pruducts" >pruducts</a>
+                <a class ="btn" href="#!suppliers ">producrs</a>
+                <a class ="btn" href="#!shippers ">shippers</a>
+                <a class ="btn" href="#!">home</a>
+    <div ng-view></div>
+    <script src="../node_modules/angularjs/index.js"></script>
+    <script src="app.js"></script>
+    <script src="products/products-controller.js"></script>
+</body>
+</html>

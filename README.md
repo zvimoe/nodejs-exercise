@@ -13,7 +13,7 @@ Start an AngularJS app with the folowing files:
     - `suppliers.view.html`
     - `suppliers.controller.js`
 - shippers
-    - `shippers.view.html`
+    - `c.view.html`
     - `shippers.controller.js`
 
 The **routing** and the **config** will be at `app.js`

@@ -1,5 +1,5 @@
 {
-  "name": "Nodejs exercise",
+  "name": "Nodejs-exercise",
   "version": "1.0.0",
   "description": "",
   "main": "express.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kob-e/nodejs-exercise.git"
+    "url": "git+https://github.com/zvimoe/nodejs-exercise.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kob-e/nodejs-exercise/issues"
+    "url": "https://github.com/zvimoe/nodejs-exercise/issues"
   },
-  "homepage": "https://github.com/kob-e/nodejs-exercise#readme",
+  "homepage": "https://github.com/zvimoe/nodejs-exercise#readme",
   "dependencies": {
     "angularjs": "0.0.1",
     "body-parser": "^1.18.2",

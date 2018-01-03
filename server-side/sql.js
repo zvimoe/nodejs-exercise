@@ -1,12 +1,12 @@
 const mysql = require('mysql');
-
+var dal =function(quary,callback){
 const con = mysql.createConnection(
     // connection details
     {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'test'
+        database: 'northwind1'
     }
 );
 
@@ -21,7 +21,8 @@ con.connect(function (err) {
 
 // 4. crud : insert
 // use backtick `` for free text
-con.query(`select * from cars`, function (err, rows) {
+con.query(quary, function (err, rows) {
+    var arr=[]
     if (err) {
         throw err;
     }
@@ -29,6 +30,8 @@ con.query(`select * from cars`, function (err, rows) {
         arr.push(row);
         console.log(row.model);
     });
-    console.log(arr);
+   callback(arr);
 });
 con.end();
+};
+module.exports.dal=dal;
