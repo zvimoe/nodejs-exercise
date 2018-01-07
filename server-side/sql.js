@@ -1,5 +1,6 @@
 const mysql = require('mysql');
-var dal =function(quary,callback){
+
+var executeQuery =function(quary,callback){
 const con = mysql.createConnection(
     // connection details
     {
@@ -24,14 +25,14 @@ con.connect(function (err) {
 con.query(quary, function (err, rows) {
     var arr=[]
     if (err) {
-        throw err;
+        callback(err)
     }
     rows.forEach(function (row) {
         arr.push(row);
         console.log(row.model);
     });
-   callback(arr);
+   callback(null,arr);
 });
 con.end();
 };
-module.exports.dal=dal;
+module.exports.executeQuery=executeQuery;
