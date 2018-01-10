@@ -1,11 +1,11 @@
-app.controller("products-ctrl",function($scope,TabelHandler){
+app.controller("products-ctrl",function($scope,tableHandler){
        var table = 'pruducts';
        var keys = [`ProductID`, `ProductName`, `SupplierID`, `CategoryID`, `QuantityPerUnit`, `UnitPrice`, `UnitsInStock`, `UnitsOnOrder`, `ReorderLevel`, `Discontinued`]
-       TabelHandler.getTable(this.table,onsucsses,onerror)
+       tableHandler.getTable(this.table,onsucsses,onerror)
           
        function onsucsses(td){
 
-         $scope.productsArray = JSON.parse(td)
+        console.log(td.data)
        }
        function onerror(err){
          console.log(err)

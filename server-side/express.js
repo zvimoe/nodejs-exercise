@@ -7,6 +7,7 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('../node_modules'))
+app.use('/client-side',express.static('../client-side'))
 app.use(express.static('../client-side'))
 
 // Express - to serve the client
@@ -19,7 +20,7 @@ app.get('/', function (req, res) {
             console.log(err);
         }
 
-        res.end(data) 
+        res.end(JSON.stringify(data)) 
     });
 });
 

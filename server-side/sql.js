@@ -7,7 +7,7 @@ const con = mysql.createConnection(
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'northwind1'
+        database: 'northwind4'
     }
 );
 
