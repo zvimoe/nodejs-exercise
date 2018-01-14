@@ -4,8 +4,8 @@ app.controller("products-ctrl",function($scope,tableHandler){
        tableHandler.getTable(this.table,onsucsses,onerror)
           
        function onsucsses(td){
-
-        console.log(td.data)
+          $scope.productsArray =td.data
+           
        }
        function onerror(err){
          console.log(err)
