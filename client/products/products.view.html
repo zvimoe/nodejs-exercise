@@ -1,0 +1,20 @@
+<div ng-controller="products-ctrl">
+    <div ng-repeat="product in productsArray">
+      
+           {{product.ProductName}}
+         
+
+    </div>
+    <hr>
+    <form>
+        <h1>Insert new Product</h1>
+         <div ng-repeat="(key,value) in values">
+             <input type="text" ng-model ="modelBinder[key]" placeholder ={{key}}>
+             
+         </div>
+         <button ng-click ="post()">post</button>
+         
+    <form>
+         {{values.Discontinued}}
+</div>
+{{values.Discontinued}}

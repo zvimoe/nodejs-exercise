@@ -16,7 +16,7 @@ function get(callback) {
     })
 }
 function post(params, callback) {
-    var pruduct = new product(params)
+    var product = new models.product(params)
     bl.Products.post(pruduct, err, res => {
         err ? callback(err) : callback(null, res);
     })

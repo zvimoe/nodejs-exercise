@@ -12,7 +12,7 @@ app.service("tableHandler", function ($http) {
     this.addRow = function (data,table, onSucsses, onError) {
         $http({
             method: 'POST',
-            url: '../express.js',
+            url: 'http://localhost:8081/products',
             params: {
                 table: table,
                 data: data

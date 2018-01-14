@@ -2,26 +2,27 @@ var express = require('express');
 var bodyParser = require("body-parser");
 var fs = require('fs')
 var Ctrl = require('./ctrl.js')
+const path = require('path');
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static('../node_modules'))
-app.use('/client-side', express.static('../client-side'))
-app.use(express.static('../client-side'))
+app.use('/node_modules', express.static(path.join(__dirname.replace('\server-side', ''), 'node_modules')))
+app.use('/client', express.static(path.join(__dirname.replace('\server-side', ''), 'client')))
 
 // Express - to serve the client
 // body parser - To handle the data of post
 
 // Listen to '/' in GET Verb methods - serve the main Angular index.html file
 app.get('/', function (req, res) {
-    fs.readFile('../client-side/index.html', 'utf8', function (err, data) {
+   // console.log(path.join(__dirname.replace('\server-side', ''), 'node_modules'));
+    fs.readFile('client/index.html', 'utf8', function (err, data) {
         if (err) {
             console.log(err);
         }
-        fs.redeFile('../client-side/products/product.view.html', 'utf8', function (err, temp) {
+        fs.readFile('client/products/product.view.html', 'utf8', function (err, temp) {
             
-             res.end(JSON.stringify(data))
+             res.end(data)
         })
     });
 });
@@ -45,8 +46,8 @@ app.get('/suppliers', function (req, res) {
 
 // Listen to '/product' in POST Verb methods
 app.post('/products', function (req, res) {
-    Ctrl.products.post(req.data); // get the body data of post
-    res.end();
+   Ctrl.products.post(req.data); // get the body data of post
+    res.end(req.data);
 })
 
 
