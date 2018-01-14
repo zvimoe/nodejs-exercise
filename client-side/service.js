@@ -9,7 +9,7 @@ app.service("tableHandler", function ($http) {
             }
         }).then(onSucsses, onError)
     }
-    this.addRow = function (table, onSucsses, onError) {
+    this.addRow = function (data,table, onSucsses, onError) {
         $http({
             method: 'POST',
             url: '../express.js',
