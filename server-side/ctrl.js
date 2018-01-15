@@ -12,12 +12,12 @@ function get(callback) {
             var m = new models.product(element)
             pruductArray.push(m)
         });
-        console.log(pruductArray)
     })
 }
 function post(params, callback) {
-    var product = new models.product(params)
-    bl.Products.post(pruduct, err, res => {
+    var product = new models.product(JSON.parse(params))
+    console.log(product)
+    bl.Products.post(product,function(err, res ){
         err ? callback(err) : callback(null, res);
     })
 

@@ -1,5 +1,6 @@
 var dal = require('./sql');
 var models = require('./models');
+var values = require('object.values');
 
 
 function getProducts(callback) {
@@ -40,7 +41,7 @@ module.exports.Products = {
 function post(obj, table, callback) {
     var keys = Object.keys(obj)
     var val = Object.values(obj)
-    dal.executeQuery("INSERT INTO" + table + "(" + keys + ") VALUES (" + values + ")", function (err) {
+    dal.executeQuery("INSERT INTO " + table + "(" + keys + ") VALUES (" + val + ")", function (err) {
         if (err) {
             callback(err);
         }

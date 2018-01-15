@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
 app.get('/products', function (req, res) {
 
     Ctrl.products.get(function (err, td) {
-        err ? console.log('error123' + err) : res.end(JSON.stringify(td));
+        err ? console.log('error' + err) : res.end(JSON.stringify(td));
     })
 
 });
@@ -46,7 +46,10 @@ app.get('/suppliers', function (req, res) {
 
 // Listen to '/product' in POST Verb methods
 app.post('/products', function (req, res) {
-   Ctrl.products.post(req.data); // get the body data of post
+   Ctrl.products.post(req.query.data,function(err,res){
+    err ? console.log('error2' + err) : res.end(JSON.stringify(res+"sucscess with insert"));
+       
+   }); // get the body data of post
     res.end(req.data);
 })
 

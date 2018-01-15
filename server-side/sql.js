@@ -27,11 +27,8 @@ con.query(quary, function (err, rows) {
     if (err) {
         callback(err)
     }
-    rows.forEach(function (row) {
-        arr.push(row);
-        console.log(row.model);
-    });
-   callback(null,arr);
+   
+   callback(null,rows);
 });
 con.end();
 };
