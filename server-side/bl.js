@@ -7,7 +7,6 @@ function get(model,callback) {
         if (err) {
             callback(err);
         }
-
         const modelArray = [];
         rows.forEach(function (row) {
             modelArray.push(new model(row));
