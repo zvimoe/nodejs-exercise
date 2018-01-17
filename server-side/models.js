@@ -10,9 +10,26 @@ function product(params){
   this.ReorderLevel = params.ReorderLevel
   this.Discontinued = params.Discontinued
 }
-function supplier(){}
+function supplier(params) {
+  this.SupplierID = params.SupplierID
+  this.CompanyName = params.CompanyName
+  this.ContactName = params.ContactName
+  this.ContactTitle = params.ContactTitle
+  this.Address = params.Address
+  this.City = params.City
+  this.Region = params.Region
+  this.PostalCode = params.PostalCode
+  this.Country = params.Country
+  this.Phone = params.Phone
+  this.Fax = params.Fax
+  this.HomePage = params.HomePage
+}
 
-function shipper(){}
+function shipper(params) {
+ this.ShipperID= params.ShipperID
+ this.CompanyName= params.CompanyName
+ this.Phone= params.Phone
+ }
 
 
 module.exports.product = product;

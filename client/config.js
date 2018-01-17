@@ -4,9 +4,9 @@ app.config(function($routeProvider){
         templateUrl : "client/products/products.view.html"
     })
     .when("/suppliers",{
-        templateUrl : "suppliers/suppliers.view.html"
+        templateUrl : "client/suppliers/suppliers.view.html"
     })
     .when("/shippers",{
-        templateUrl : "shippers/shippers.view.html"
+        templateUrl : "client/shippers/shippers.view.html"
     })
 })

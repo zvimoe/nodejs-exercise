@@ -1,44 +1,27 @@
 var dal = require('./sql');
-var models = require('./models');
 var values = require('object.values');
 
 
-function getProducts(callback) {
-    dal.executeQuery('SELECT * FROM `products`', function (err, rows) {
+function get(model,callback) {
+    dal.executeQuery('SELECT * FROM '+model.name+'s', function (err, rows) {
         if (err) {
             callback(err);
         }
 
-        const customersObjectsArray = [];
+        const modelArray = [];
         rows.forEach(function (row) {
-            customersObjectsArray.push(new models.product(row));
+            modelArray.push(new model(row));
         });
-        callback(null, customersObjectsArray);
+        callback(null, modelArray);
     });
 }
-function postProducts(product, callback) {
-    post(product, 'products', function (err, res) {
+function post(model, callback) {
+    insertQuaryBuilder(model,model.name+'s' , function (err, res) {
         err ? console.log(err) : console.log(res);
     })
 
 }
-
-module.exports.Products = {
-    get: getProducts,
-    post: postProducts
-}
-// module.exports.Shippers = {
-//     get: getShippers,
-//     post: postShippers
-// }
-// module.exports.Suppliers = {
-//     get: getSuppliers,
-//     post: postSuppliers
-// }
-
-
-
-function post(obj, table, callback) {
+function insertQuaryBuilder(obj, table, callback) {
     var keys = Object.keys(obj)
     var val = Object.values(obj)
     dal.executeQuery("INSERT INTO " + table + "(" + keys + ") VALUES (" + val + ")", function (err) {
@@ -51,3 +34,5 @@ function post(obj, table, callback) {
         }
     });
 }
+module.exports.get = get
+module.exports.post = post

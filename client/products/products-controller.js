@@ -1,17 +1,16 @@
 app.controller("products-ctrl",
-function($scope,
-tableHandler){
+function($scope,tableHandler){
        var table = 'pruducts';
        $scope.modelBinder = {};
        $scope.values = {
-        ProductName :"yuyurytrt",
-        SupplierID:"trtr",
-        CategoryID :"trtr",
-        QuantityPerUnit :"trtr",
-        UnitPrice:"8787",
-        UnitsInStock :"nnbn",
-        UnitsOnOrder :"ghh",
-        ReorderLevel :"hghg",
+        ProductName :"",
+        SupplierID:"",
+        CategoryID :"",
+        QuantityPerUnit :"",
+        UnitPrice:"",
+        UnitsInStock :"",
+        UnitsOnOrder :"",
+        ReorderLevel :"",
         Discontinued :""
       }
        tableHandler.getTable(this.table,onsucsses,onerror)

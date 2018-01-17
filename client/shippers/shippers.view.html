@@ -1,9 +1,21 @@
 <div ng-controller="shippers-ctrl">
-    <div ng-repeat="shippersArray">
-        <div>
-           {{productsArray.pruductName}}
+        <table class='table'>
+                <tr>
+                    <th ng-repeat="(key,value) in values">{{ key}} </th>
+                </tr>
+                <tr ng-repeat="product in productsArray">
+                    <td ng-repeat="(key,value) in values">{{product[key]}}</td>
+                </tr>
+            </table>
+            <hr>
+            <form class = 'form-group'>
+               
+                <div ng-repeat="(key,value) in values">
+                    <input type="text" ng-model="modelBinder[key]" placeholder={{key}}>
+        
+                </div>
+                <button ng-click="post()">post</button>
+        
+                <form>
+                    
         </div>
-
-    </div>
-     
-</div>
