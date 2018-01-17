@@ -5,7 +5,7 @@ var values = require('object.values');
 function get(model,callback) {
     dal.executeQuery('SELECT * FROM '+model.name+'s', function (err, rows) {
         if (err) {
-            callback(err);
+            callback(err);constructor.name 
         }
         const modelArray = [];
         rows.forEach(function (row) {
@@ -15,6 +15,7 @@ function get(model,callback) {
     });
 }
 function post(model, callback) {
+    console.log(model)
     insertQuaryBuilder(model,model.name+'s' , function (err, res) {
         err ? console.log(err) : console.log(res);
     })

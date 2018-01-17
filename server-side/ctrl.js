@@ -29,7 +29,7 @@ function get(model,callback) {
 }
 function post(params, model,callback) {
     var product = new model(JSON.parse(params))
-    console.log(product)
+    console.log(model.name)
     bl.post(product,function(err,res){
         err ? callback(err) : callback(null, res);
     })
